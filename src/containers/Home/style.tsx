@@ -102,6 +102,7 @@ export const DaysHeader = styled.ul`
 
 export const DaysHours = styled.li`
   width: 100%;
+  min-width:160px;
 
  
   border-left: 1px solid ${Colors.White};

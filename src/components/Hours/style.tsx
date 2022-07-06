@@ -15,8 +15,7 @@ export const Span = styled.span`
   transition: 200ms ease;
 
   &:hover {
-    cursor: pointer;
-    background-color: ${Colors.BgWhite};
+      background-color: ${Colors.BgWhite};
   }
 `;
 
