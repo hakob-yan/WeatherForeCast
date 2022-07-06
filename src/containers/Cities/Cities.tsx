@@ -51,7 +51,7 @@ export const Cities = () => {
           onChange={handleComplete}
           id="custom-autocomplete"
           options={data}
-          style={{ width: 350, margin: 20 }}
+          style={{ minWidth: 300, margin: 20 }}
           getOptionLabel={handleOption} //filter value
           renderInput={handleInput} />
         <Button style={{ width: "150px", margin: "0 auto" }}

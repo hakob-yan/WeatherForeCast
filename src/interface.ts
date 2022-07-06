@@ -12,9 +12,10 @@ export interface IProps {
 export interface IDays {
   date: string,
   temp: string | undefined|number,
-  main: string
-  icon: string
-  key?:string
+  main: string,
+  icon: string,
+  key?: string,
+  isClicked:boolean,
  }
 
  export interface IHours {

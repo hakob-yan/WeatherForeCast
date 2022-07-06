@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import cityImg from "../../assets/cities.jpg";
 import { FormControl } from "@mui/material";
-import { colors } from "../../constants/Color"
+import { Colors } from "../../constants/Color"
 
 export const Form = styled(FormControl)`
   position: relative !important;
   top: 10px;
   right: 10px;
-  background-color: ${colors.White};
+  background-color: ${Colors.White};
   width: 500px !important;
 `;
 export const Div = styled.div`

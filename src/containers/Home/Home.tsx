@@ -33,7 +33,7 @@ export const Home: React.FC = observer(() => {
   return (
     <Style.Image $url={imageBackground}>
       <Style.Container>
-        <Style.H>
+        <Style.TopLayOut>
           <Style.H1>{name}</Style.H1>
           <Style.Weather>
             <Style.IsSunny>
@@ -41,15 +41,15 @@ export const Home: React.FC = observer(() => {
             </Style.IsSunny>
             <Style.Temp> {cToFahr(temp)}</Style.Temp>
           </Style.Weather>
-        </Style.H>
-        <Style.Days>
+        </Style.TopLayOut>
+        <Style.BottomLayOut>
           <Style.DaysHeader>
             <Day />
           </Style.DaysHeader>
           <Style.HoursHeader>
             <Hour />
           </Style.HoursHeader>
-        </Style.Days>
+        </Style.BottomLayOut>
       </Style.Container>
     </Style.Image>
   );

@@ -40,8 +40,9 @@ export const weatherChange = (arr: IProps[]): void => {
             date: `${moment(item.dt_txt).format('dddd').slice(0,3)}`,
             main: item.weather[0].main,
             icon: item.weather[0].icon,
-            temp: Math.round(kelToCel(item.main.temp))
-        }
+            temp: Math.round(kelToCel(item.main.temp)),
+            isClicked: false,
+               }
     }
 };
 

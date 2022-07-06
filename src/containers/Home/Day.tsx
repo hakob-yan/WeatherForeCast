@@ -3,7 +3,9 @@ import store from "../../MobX/store";
 import * as Style from "./style";
 import { Days } from "../../components/Days/Days";
 import { Hours } from "../../components/Hours/Hours";
-
+function isClicked(a: number, b: number) {
+    return a === b
+}
 export const Day = () => {
     return <>
         {store.dDays.map((_item, index) => {
@@ -11,12 +13,13 @@ export const Day = () => {
 
             const handleClick = () => {
                 store.changeDay(index)
+                console.log(index, store.cities.day);
             };
 
             return (
-                <Style.Wrap key={`day-${index}`} onClick={handleClick}>
-                    <Days date={date} temp={cToFahr(temp)} main={main} icon={icon} />
-                </Style.Wrap>
+                <li key={`day-${index}`} onClick={handleClick}>
+                    <Days isClicked={index === store.cities.day} date={date} temp={cToFahr(temp)} main={main} icon={icon} />
+                </li>
             );
         })}
     </>

@@ -14,7 +14,8 @@ const dDaysData: IDays = {
   date: "22-05",
   main: "",
   temp:"65",
-  icon: "01d"
+  icon: "01d",
+  isClicked: false,
 }
 
 export const dDays: IDays[] = [

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { colors } from "../../constants/Color";
+import { Colors } from "../../constants/Color";
 
 interface IProps {
   to: string;
@@ -14,12 +14,12 @@ export const Header = styled.header`
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: ${colors.Header};
+  background-color: ${Colors.Header};
 `;
 
 export const WrapLink = styled(Link) <IProps>`
   text-decoration: none;
-  color: ${colors.White};
+  color: ${Colors.White};
   cursor: pointer;
   margin: 0 10px;
 `;

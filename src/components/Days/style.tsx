@@ -4,23 +4,24 @@ import { IoIosSunny } from "react-icons/io";
 interface ISrc {
   src: string
 }
-
-export const Span = styled.span`
-  width: 120px; 
-   border: 2px solid rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0.5);
+interface Props {
+  isClicked:boolean
+}
+export const Block = styled.div<Props>`
+  width: ${props => props.isClicked ? "170px" : "150px"};;
+  border: 2px solid rgb(255, 255, 255);
+  background-color: ${props => props.isClicked ? "rgba(255, 255, 255, 0.1)" :"rgba(0, 0, 0, 0.5)"};
   border-radius: 10px;
-  margin: 0 2vw;
   transition: 200ms ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   transition: 200ms ease;
 
   &:hover {
     cursor: pointer;
-    width:170px;
+    width: 170px;
     background-color: rgba(255, 255, 255, 0.1);
   }
 `;

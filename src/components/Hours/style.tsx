@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../constants/Color"
+import { Colors } from "../../constants/Color"
+
 interface ISrc {
   src: string
 }
@@ -15,7 +16,7 @@ export const Span = styled.span`
 
   &:hover {
     cursor: pointer;
-    background-color: ${colors.BgWhite};
+    background-color: ${Colors.BgWhite};
   }
 `;
 
@@ -23,18 +24,20 @@ export const Title = styled.span`
   margin: 8px 20px;
   padding: 1px 10px;
   font-size: 24px;
-  background-color: ${colors.BgWhite};
-  color:  ${colors.White};;
+  background-color: ${Colors.BgWhite};
+  color:  ${Colors.White};;
   border-radius: 25px;
 `;
+
 export const Temp = styled.span`
   margin: 8px 20px;
   padding: 1px 10px;
   font-size: 24px;
-  color:  ${colors.White};;
+  color:  ${Colors.White};;
   border-radius: 25px;
 `;
+
 export const I = styled.img<ISrc>`
-margin:0;
-padding:0;
+  margin:0;
+  padding:0;
 `;
