@@ -10,11 +10,12 @@ export const Form = styled(FormControl)`
   background-color: ${Colors.White};
   width: 500px !important;
 `;
+
 export const Div = styled.div`
-overflow: auto;
-display: flex;
-justify-content: center;
-position: relative;
-height: calc(100vh - 60px);
-background-image: url(${cityImg});
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: calc(100vh - 60px);
+  background-image: url(${cityImg});
 `;

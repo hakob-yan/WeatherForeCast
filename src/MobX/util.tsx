@@ -1,26 +1,26 @@
 import store from "./store"
 import { TemperatureSign } from "../constants/Temperature"
-import { IProps } from "../interface"
+import { IWeatherDataItem } from "../interface"
 import { DayMilliseconds } from "../constants/Temperature"
 import { DayDif } from "../constants/Temperature"
 import { DocDay } from "../constants/Temperature"
 import moment from "moment"
-const kelToCel = (temp: number) => {
-    return temp - 273
+
+const kelToCel = (temp: number): number => {
+    return temp - 273;
 }
 
-const arrFilter = (arr: IProps[]) => {
+const arrFilter = (arr: IWeatherDataItem[]) => {
     return arr.filter((_elem, i, arr) => {
         const currentItemDate = new Date(arr[i].dt_txt).getDate();
         const nextItemMilliseconds = Date.now() + store.cities.day * DayMilliseconds;
         const nextItemDate = new Date(nextItemMilliseconds).getDate();
+
         return currentItemDate === nextItemDate;
     })
 }
 
-
-
-export const weatherChange = (arr: IProps[]): void => {
+export const weatherChange = (arr: IWeatherDataItem[]): void => {
     const arr2 = arrFilter(arr);
 
     store.dHours = arr2.map((elem) => {
@@ -37,12 +37,12 @@ export const weatherChange = (arr: IProps[]): void => {
         const item = arr[i * DayDif];
 
         store.dDays[i] = {
-            date: `${moment(item.dt_txt).format('dddd').slice(0,3)}`,
+            date: `${moment(item.dt_txt).format('dddd').slice(0, 3)}`,
             main: item.weather[0].main,
             icon: item.weather[0].icon,
             temp: Math.round(kelToCel(item.main.temp)),
             isClicked: false,
-               }
+        }
     }
 };
 

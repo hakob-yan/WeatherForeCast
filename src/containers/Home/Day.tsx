@@ -3,42 +3,36 @@ import store from "../../MobX/store";
 import * as Style from "./style";
 import { Days } from "../../components/Days/Days";
 import { Hours } from "../../components/Hours/Hours";
-function isClicked(a: number, b: number) {
-    return a === b
-}
-export const Day = () => {
-    return <>
-        {store.dDays.map((_item, index) => {
-            const { date, temp, main, icon } = store.dDays[index];
 
-            const handleClick = () => {
-                store.changeDay(index)
-                console.log(index, store.cities.day);
-            };
+export const Day = () => <>
+    {store.dDays.map((item, index) => {
+        const { date, temp, main, icon } = store.dDays[index];
 
-            return (
-                <li key={`day-${index}`} onClick={handleClick}>
-                    <Days isClicked={index === store.cities.day} date={date} temp={cToFahr(temp)} main={main} icon={icon} />
-                </li>
-            );
-        })}
-    </>
-}
+        const handleClick = () => {
+            store.changeDay(index);
+        };
 
-export const Hour = () => {
-    return <>
-        {store.dHours.map((elem, i, arr) => {
-            const { hour, temp, main, icon } = store.dHours[i];
-            return (
-                <Style.DaysHours key={`hour-${i}`}>
-                    <Hours
-                        hour={hour}
-                        main={main}
-                        icon={icon}
-                        temp={cToFahr(temp)}
-                    />
-                </Style.DaysHours>
-            )
-        })}
-    </>
-}
+        return (
+            <li key={`day-${item.date}`} onClick={handleClick}>
+                <Days isClicked={index === store.cities.day} date={date} temp={cToFahr(temp)} main={main} icon={icon} />
+            </li>
+        );
+    })}
+</>
+
+export const Hour: React.FC = () => <>
+    {store.dHours.map((item, index) => {
+        const { hour, temp, main, icon } = store.dHours[index];
+
+        return (
+            <Style.DaysHours key={`hour-${item.hour}`}>
+                <Hours
+                    hour={hour}
+                    main={main}
+                    icon={icon}
+                    temp={cToFahr(temp)}
+                />
+            </Style.DaysHours>
+        );
+    })}
+</>

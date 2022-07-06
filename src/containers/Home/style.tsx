@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { Colors } from "../../constants/Color";
 
-
 export const Image = styled.div<{ $url: string }>(({ $url }) => css`
   width: 100%;
   padding-bottom:20px;
@@ -53,7 +52,7 @@ export const Temp = styled(H1)`
   text-shadow: 5px 5px 2px ${Colors.ShadowBlue};
 `;
 export const IsSunny = styled.div`
- padding-top:1vh;
+  padding-top:1vh;
 `;
 
 export const Weather = styled.div`
@@ -103,8 +102,6 @@ export const DaysHeader = styled.ul`
 export const DaysHours = styled.li`
   width: 100%;
   min-width:160px;
-
- 
   border-left: 1px solid ${Colors.White};
   background-color: ${Colors.BGBlack};
 `;
@@ -143,12 +140,9 @@ export const HoursHeader = styled.ul`
   }
 `;
 
-interface ISrc {
-  src: string
-}
-export const I = styled.img<ISrc>`
-margin:0;
-padding:0;
-width: 10vw;
-height: 10vw;
+export const I = styled.img<{ src: string }>`
+  margin:0;
+  padding:0;
+  width: 10vw;
+  height: 10vw;
 `;

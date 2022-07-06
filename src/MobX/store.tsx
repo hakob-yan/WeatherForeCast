@@ -3,9 +3,6 @@ import { Temper } from "../constants/Temperature"
 import { weatherChange } from "./util";
 import { dHours, dDays, cities, temp } from "./data"
 
-
-
-
 class Store {
   temp = temp;
   cities = cities
@@ -13,6 +10,10 @@ class Store {
   dHours = dHours;
   weatherChange = weatherChange;
   addedCities = [];
+
+  constructor() {
+    makeAutoObservable(this);
+  }
 
   addCities(arr: any) {
     this.addedCities = arr;
@@ -40,13 +41,9 @@ class Store {
     }
   }
 
-
   changeDay(index: number): void {
     this.cities.day = index;
   }
-
-  constructor() {
-    makeAutoObservable(this);
-  }
 }
+
 export default new Store();
