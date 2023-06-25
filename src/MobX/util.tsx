@@ -69,3 +69,7 @@ export const Api = (lat: string, lng: string): string => {
 export const Icon = (icon: string): string => {
     return `http://openweathermap.org/img/wn/${icon}@2x.png`
 }
+
+export const Location = (): string => {
+    return `https://ipapi.co/json`
+}

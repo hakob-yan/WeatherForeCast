@@ -27,9 +27,9 @@ export const dHours: IHours[] = [
 ];
 
 export const cities: ICity = {
-  name: "Yerevan",
-  lat: "40.18111",
-  lng: "44.51361",
+  name: 'null',
+  lat: "null",
+  lng: "null",
   day: 0
 };
 
